@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Admin Page
+        </title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    </head>
+    <script>
+      $(document).ready(function()    
+          {
+          $("#delus").click(function()
+           {
+               var delId= prompt("Enter the ID to Delete");
+            $.ajax({
+              type:'delete', 
+              url:'http://localhost:4550/api/delete/'+delId,
+              
+              success:function(data)
+              {
+                 alert("Successfully Deleted ")  
+              },
+              error:function(err)
+              {
+                 alert(err);
+              }
+         });
+        });
+        });
+
+    </script>
+    <body>
+                <h1  class="signup text-center">Admin Dashboard</h1><br><br><br>
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-md-4 dashbrd">
+                      <img src="images/aduser.png"><br>
+                      <a button onclick="window.location.href='ajax.html'" type="button" class="btn btn-success">Add User</button></a>
+                    </div>
+                    <div class="col-md-4 dashbrd">
+                      <img src="images/deluser.png"><br>
+                      <a button type="button" id="delus" class="btn btn-danger">Delete User</button></a>
+                    </div>
+                    <div class="col-md-4 dashbrd">
+                      <img src="images/upuser.png"><br>
+                      <a button onclick="window.location.href='ajax.html'" type="button" class="btn btn-info">Update User</button></a>
+                    </div>
+                  </div>
+    </body>
+</html>

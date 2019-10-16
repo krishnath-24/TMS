@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+            <link rel="stylesheet" href="stylesheet/style.css">
+            <title>
+                Admin Login
+            </title>
+            <script>
+                $(document).ready(function()
+                {
+                    $("form").submit(function()
+                    {
+                       if(($("#inputID").val()==8080) && ($("#inputPassword").val()==("admin")))
+                       {
+                           alert("Succesfully loggedIn");
+                           return true;
+                       }
+                       else{
+                           alert("Fo")
+                           return false;
+                       }
+                    });
+                });
+            </script>
+    </head>
+    <form class="form-signin" method="GET" action="Admin1.html">
+        <img class="mb-4" src="images/Capture.PNG" width="300" height="150">
+        <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+        <label for="inputID" class="sr-only">Emp ID</label>
+        <input type="number" name="inputId" id="inputID" class="form-control" placeholder="Emp ID" required autofocus>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" name="inputpwd" id="inputPassword" class="form-control" placeholder="Password" required>
+        <div class="checkbox mb-3">
+          <label>
+            <input type="checkbox" value="remember-me"> Remember me
+          </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        <p class="mt-5 mb-3 text-muted">&copy; Copyrights reserved for ColdMonks</p>
+      </form>
+</html>
